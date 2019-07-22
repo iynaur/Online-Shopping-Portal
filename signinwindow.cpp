@@ -35,7 +35,8 @@ void SignInWindow::on_signInPushButton_clicked()
     password = ui->passwordLineEdit->text();
 
     QSqlQuery query;
-    if(query.exec("SELECT * FROM customer WHERE email_id = '" + emailId + "' and password = '" + password + "'")){
+    if(1)//(query.exec("SELECT * FROM customer WHERE email_id = '" + emailId + "' and password = '" + password + "'"))
+    {
         //if(query.record().count())       ;
         qDebug() << "query success login";
         QSqlQuery getId("SELECT customer_id FROM customer WHERE email_id = '" + emailId + "' and password = '" + password + "'");
